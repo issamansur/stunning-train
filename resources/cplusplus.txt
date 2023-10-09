@@ -1,0 +1,161 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <cmath>
+#include <fstream>
+#include <sstream>
+#include <stdexcept>
+
+// Пример объявления класса
+class MyClass {
+public:
+    MyClass() {
+        std::cout << "Конструктор MyClass" << std::endl;
+    }
+
+    ~MyClass() {
+        std::cout << "Деструктор MyClass" << std::endl;
+    }
+
+    void MyMethod() {
+        std::cout << "Вызван MyMethod" << std::endl;
+    }
+
+    int Add(int a, int b) {
+        return a + b;
+    }
+
+private:
+    int privateData;
+};
+
+// Пример использования структуры
+struct Point {
+    int x;
+    int y;
+};
+
+// Пример перечисления
+enum Color {
+    RED,
+    GREEN,
+    BLUE
+};
+
+// Пример объявления функции
+int Multiply(int a, int b) {
+    return a * b;
+}
+
+// Пример использования шаблона
+template <typename T>
+T GetMax(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    // Пример создания объекта класса
+    MyClass obj;
+    obj.MyMethod();
+
+    // Пример работы с вектором
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+    for (int num : numbers) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+    // Пример обработки исключений
+    try {
+        int result = 10 / 0;
+    } catch (const std::runtime_error& e) {
+        std::cerr << "Ошибка: " << e.what() << std::endl;
+    }
+
+    // Пример работы с файлами
+    std::ofstream outFile("example.txt");
+    if (outFile.is_open()) {
+        outFile << "Пример записи в файл" << std::endl;
+        outFile.close();
+    }
+
+    // Пример использования структуры
+    Point p = {3, 4};
+    std::cout << "Координаты точки: (" << p.x << ", " << p.y << ")" << std::endl;
+
+    // Пример работы с перечислением
+    Color c = RED;
+    std::cout << "Выбран цвет: " << c << std::endl;
+
+    // Пример работы с шаблоном
+    int maxNumber = GetMax(10, 20);
+    std::cout << "Максимальное число: " << maxNumber << std::endl;
+
+    return 0;
+}
+
+// Пример объявления и использования класса
+class Person {
+public:
+    Person(const std::string& name, int age)
+        : name_(name), age_(age) {
+    }
+
+    void Greet() {
+        std::cout << "Привет, меня зовут " << name_ << " и мне " << age_ << " лет." << std::endl;
+    }
+
+private:
+    std::string name_;
+    int age_;
+};
+
+// Пример работы с вектором объектов
+void PrintPeopleInfo(const std::vector<Person>& people) {
+    for (const Person& person : people) {
+        person.Greet();
+    }
+}
+
+// Пример использования лямбда-выражений
+void ExampleLambda() {
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+    // Используем лямбда-выражение для вывода чисел, умноженных на 2
+    std::for_each(numbers.begin(), numbers.end(), [](int x) {
+        std::cout << x * 2 << " ";
+    });
+    std::cout << std::endl;
+}
+
+// Пример работы с указателями и ссылками
+void ModifyNumber(int& num) {
+    num *= 2;
+}
+
+int main() {
+    // Пример работы с объектами класса
+    Person person1("Анна", 25);
+    Person person2("Иван", 30);
+
+    person1.Greet();
+    person2.Greet();
+
+    // Пример работы с вектором объектов
+    std::vector<Person> people;
+    people.push_back(person1);
+    people.push_back(person2);
+
+    PrintPeopleInfo(people);
+
+    // Пример использования лямбда-выражений
+    ExampleLambda();
+
+    // Пример работы с указателями и ссылками
+    int number = 10;
+    ModifyNumber(number);
+    std::cout << "Измененное число: " << number << std::endl;
+
+    return 0;
+}

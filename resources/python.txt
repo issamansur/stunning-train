@@ -1,0 +1,183 @@
+# Определение переменных
+x = 5
+y = 10
+xx: int = 5
+yy: double = 6
+zz: str = "7"
+zzz = 'refewf'
+
+
+# Условные операторы
+if x > y:
+    print("x больше y")
+elif x < y:
+    print("x меньше y")
+else:
+    print("x равно y")
+
+# Циклы
+for i in range(5):
+    print(i)
+
+while x < 20:
+    x += 1
+
+# Функции
+def add(a, b):
+    return a + b
+
+result = add(x, y)
+
+# Списки
+my_list = [1, 2, 3, 4, 5]
+
+# Словари
+my_dict = {"name": "John", "age": 30}
+
+# Множества
+my_set = {1, 2, 3, 4, 5}
+
+# Кортежи
+my_tuple = (1, 2, 3)
+
+# Строки
+my_string = "Hello, world!"
+
+# Ввод и вывод
+user_input = input("Введите что-то: ")
+print("Вы ввели:", user_input)
+
+# Исключения
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Деление на ноль!")
+
+# Классы и объекты
+class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+    def get_value(self):
+        return self.value
+
+my_object = MyClass(42)
+print(my_object.get_value())
+
+# Импорты
+import math
+print(math.sqrt(16))
+
+# Генераторы
+my_generator = (x * 2 for x in range(5))
+
+# Комментарии
+# Это комментарий в одну строку
+
+'''
+Это
+многострочный
+комментарий
+'''
+
+# Выход из программы
+import sys
+sys.exit()
+
+# Лямбда-выражения
+add = lambda x: int, y: int) -> int:
+    return x + y
+
+result = add(5, 10)
+
+# ООП и использование self
+class Person:
+    def __init__(self, name: str, age: int) -> None:
+        self.name = name
+        self.age = age
+
+    def greet(self) -> str:
+        return f"Привет, меня зовут {self.name} и мне {self.age} лет."
+
+person1 = Person("Alice", 30)
+person2 = Person("Bob", 25)
+print(person1.greet())
+print(person2.greet())
+
+# Работа с словарями
+student = {
+    "name": "John",
+    "age": 25,
+    "courses": ["Math", "Physics"]
+}
+print(student["name"])
+print(student.get("courses", "No courses found"))
+
+# Асинхронное программирование
+import asyncio
+
+async def async_function() -> None:
+    await asyncio.sleep(1)
+    print("Асинхронная функция выполнена")
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(async_function())
+
+# Генераторы
+def my_generator(n: int) -> Generator[int, None, None]:
+    for i in range(n):
+        yield i
+
+gen = my_generator(5)
+for value in gen:
+    print(value)
+
+# Сопрограммы
+async def coroutine():
+    print("Начало корутины")
+    await asyncio.sleep(1)
+    print("Корутина завершена")
+
+loop.run_until_complete(coroutine())
+
+# Множества
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+intersection = set1 & set2
+print(intersection)
+
+# Генераторы списков
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = [x**2 for x in numbers if x % 2 == 0]
+print(squared_numbers)
+
+# Работа с файлами
+with open("example.txt", "r") as file:
+    content = file.read()
+
+# Контекстные менеджеры
+class MyContext:
+    def __enter__(self):
+        print("Вход в контекст")
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Выход из контекста")
+
+with MyContext() as context:
+    print("Внутри контекста")
+
+# Декораторы
+def my_decorator(func):
+    def wrapper(*args, **kwargs):
+        print("До вызова функции")
+        result = func(*args, **kwargs)
+        print("После вызова функции")
+        return result
+    return wrapper
+
+@my_decorator
+def say_hello(name):
+    print(f"Привет, {name}!")
+
+say_hello("Alice")

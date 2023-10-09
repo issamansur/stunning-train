@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <person>
+        <name>John Doe</name>
+        <age>30</age>
+        <gender>Male</gender>
+    </person>
+    <person>
+        <name>Jane Smith</name>
+        <age>25</age>
+        <gender>Female</gender>
+    </person>
+    <bookstore>
+        <book>
+            <title>Harry Potter and the Sorcerer's Stone</title>
+            <author>J.K. Rowling</author>
+            <price>19.99</price>
+        </book>
+        <book>
+            <title>The Hobbit</title>
+            <author>J.R.R. Tolkien</author>
+            <price>15.99</price>
+        </book>
+    </bookstore>
+    <car>
+        <make>Toyota</make>
+        <model>Camry</model>
+        <year>2022</year>
+    </car>
+    <movie>
+        <title>Star Wars: Episode IV - A New Hope</title>
+        <director>George Lucas</director>
+        <releaseYear>1977</releaseYear>
+    </movie>
+    <music>
+        <song>
+            <title>Bohemian Rhapsody</title>
+            <artist>Queen</artist>
+            <album>A Night at the Opera</album>
+        </song>
+        <song>
+            <title>Imagine</title>
+            <artist>John Lennon</artist>
+            <album>Imagine</album>
+        </song>
+    </music>
+    <company name="Example Corp">
+        <employee>
+            <name>Alice Johnson</name>
+            <position>Manager</position>
+        </employee>
+        <employee>
+            <name>Bob Smith</name>
+            <position>Developer</position>
+        </employee>
+    </company>
+    <!-- Это комментарий -->
+</root>

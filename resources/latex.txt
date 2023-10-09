@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{hyperref}
+
+% Объявление переменных
+\newcommand{\myVar}{42}
+\def\myStr{LaTeX is fun!}
+
+% Функции
+\newcommand{\myFunction}[2]{%
+    \textbf{Arguments}: #1, #2\par%
+    \textit{Function body}\par%
+}
+
+% Классы и методы
+\newcommand{\myClass}[1]{%
+    \textbf{Class}: #1\par%
+}
+
+% Структуры
+\newcommand{\myStruct}[1]{%
+    \textbf{Structure}: #1\par%
+}
+
+% Списки
+\begin{itemize}
+    \item First item
+    \item Second item
+\end{itemize}
+
+% Подключение изображения
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{example-image}
+    \caption{Example Image}
+\end{figure}
+
+% Нумерованные списки
+\begin{enumerate}
+    \item First item
+    \item Second item
+\end{enumerate}
+
+% Математические формулы
+\begin{equation}
+    E=mc^2
+\end{equation}
+
+% Листинги кода
+\begin{lstlisting}[language=TeX, caption=LaTeX Code]
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+    Hello, LaTeX!
+    \begin{equation}
+        E=mc^2
+    \end{equation}
+\end{document}
+\end{lstlisting}
+
+% Рисунки с TikZ
+\begin{tikzpicture}
+    \node (A) {A};
+    \node (B) [right=of A] {B};
+    \draw[->] (A) -- (B);
+\end{tikzpicture}
+
+% Гиперссылки
+\href{https://www.latex-project.org/}{LaTeX Project}
+
+\begin{document}
+    \title{LaTeX Sample}
+    \author{Your Name}
+    \date{\today}
+    \maketitle
+    
+    \section{Introduction}
+    This is a LaTeX document with various constructs.
+    
+    \section{Conclusion}
+    That's all, folks!
+\end{document}
