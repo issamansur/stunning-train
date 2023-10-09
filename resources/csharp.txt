@@ -7,17 +7,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Операторы и структуры данных
         int[] numbers = { 1, 2, 3, 4, 5 };
         int[] squaredNumbers = numbers.Select(x => x * x).ToArray();
         int[] evenNumbers = numbers.Where(x => x % 2 == 0).ToArray();
 
-        // Множества (HashSet)
         HashSet<int> mySet = new HashSet<int> { 1, 2, 3, 4, 5 };
         mySet.Add(6);
         mySet.Remove(3);
 
-        // Интерфейс IEnumerable и yield
         IEnumerable<int> MyGenerator(int n)
         {
             for (int i = 0; i < n; i++)
@@ -32,20 +29,16 @@ class Program
             Console.WriteLine(value);
         }
 
-        // Итераторы
         List<int> myList = new List<int> { 1, 2, 3, 4, 5 };
         var myIterator = myList.GetEnumerator();
         myIterator.MoveNext();
         var nextValue = myIterator.Current;
 
-        // Функциональное программирование (LINQ)
         List<int> myList = new List<int> { 1, 2, 3, 4, 5 };
         int sumResult = myList.Aggregate((x, y) => x + y);
 
-        // Модули и импорты
         double sqrt = Math.Sqrt(25);
 
-        // Обработка ошибок и исключений
         try
         {
             double result = 10 / 0;
@@ -55,7 +48,6 @@ class Program
             string result = "Деление на ноль!";
         }
 
-        // Генераторы исключений
         double Divide(int x, int y)
         {
             if (y == 0)
@@ -65,20 +57,17 @@ class Program
             return (double)x / y;
         }
 
-        // Работа с файлами
         string content;
         using (StreamReader reader = new StreamReader("example.txt"))
         {
             content = reader.ReadToEnd();
         }
 
-        // Контекстные менеджеры
         using (MyContext context = new MyContext())
         {
             Console.WriteLine("Внутри контекста");
         }
 
-        // Декораторы
         void MyDecorator(Action<string> func)
         {
             Console.WriteLine("До вызова функции");
@@ -102,7 +91,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-// Асинхронность и задачи (async/await)
 class AsyncExample
 {
     async Task<int> GetValueAsync()
@@ -118,7 +106,6 @@ class AsyncExample
     }
 }
 
-// Определение пользовательских классов
 class Person
 {
     public string FirstName { get; set; }
@@ -130,7 +117,6 @@ class Person
     }
 }
 
-// Использование ссылок и референсов
 class RefExample
 {
     void ModifyValue(ref int x)
@@ -146,7 +132,6 @@ class RefExample
     }
 }
 
-// Наследование и переопределение методов
 class Shape
 {
     public virtual double Area()
@@ -191,19 +176,15 @@ class Program
 {
     static void Main()
     {
-        // Пример асинхронности
         AsyncExample asyncExample = new AsyncExample();
         asyncExample.MainAsync().GetAwaiter().GetResult();
 
-        // Пример работы с классами
         Person person = new Person { FirstName = "Alice", LastName = "Johnson" };
         Console.WriteLine(person);
 
-        // Пример ссылок и референсов
         RefExample refExample = new RefExample();
         refExample.Main();
 
-        // Пример наследования и переопределения методов
         Shape circle = new Circle(5.0);
         Shape rectangle = new Rectangle(4.0, 6.0);
 
@@ -212,61 +193,52 @@ class Program
     }
 }
 
-// Класс с модификатором доступа public
 public class PublicClass
 {
     public int PublicField;
     public void PublicMethod() { }
 }
 
-// Класс с модификатором доступа internal (по умолчанию)
 class InternalClass
 {
     internal int InternalField;
     internal void InternalMethod() { }
 }
 
-// Класс с модификатором доступа private
 class PrivateClass
 {
     private int PrivateField;
     private void PrivateMethod() { }
 }
 
-// Абстрактный класс
 public abstract class AbstractClass
 {
     public abstract void AbstractMethod();
 }
 
-// Статический класс
 public static class StaticClass
 {
     public static int StaticField;
     public static void StaticMethod() { }
 }
 
-// Герметичный класс
 sealed class SealedClass
 {
     public int SealedField;
     public void SealedMethod() { }
 }
 
-// Класс с вложенными классами
 public class OuterClass
 {
     public int OuterField;
     public void OuterMethod() { }
 
-    // Вложенный класс
     public class NestedClass
     {
         public int NestedField;
         public void NestedMethod() { }
     }
 
-    // Вложенный статический класс
     public static class StaticNestedClass
     {
         public static int StaticNestedField;
@@ -278,7 +250,6 @@ class Program
 {
     static void Main()
     {
-        // Создание экземпляров классов и вызов методов
         PublicClass publicInstance = new PublicClass();
         publicInstance.PublicField = 1;
         publicInstance.PublicMethod();
@@ -288,7 +259,6 @@ class Program
         internalInstance.InternalMethod();
 
         PrivateClass privateInstance = new PrivateClass();
-        // Нельзя обратиться к private-членам извне класса
 
         StaticClass.StaticField = 3;
         StaticClass.StaticMethod();
@@ -311,20 +281,17 @@ class Program
     }
 }
 
-// Интерфейс
 public interface IMyInterface
 {
     void InterfaceMethod();
 }
 
-// Интерфейс с методами и свойствами
 public interface IMyInterfaceWithProperties
 {
     int InterfaceProperty { get; set; }
     void InterfaceMethod();
 }
 
-// Реализация интерфейса
 public class InterfaceImplementation : IMyInterface
 {
     public void InterfaceMethod()
@@ -333,7 +300,6 @@ public class InterfaceImplementation : IMyInterface
     }
 }
 
-// Реализация интерфейса с методами и свойствами
 public class InterfaceWithPropertiesImplementation : IMyInterfaceWithProperties
 {
     public int InterfaceProperty { get; set; }
@@ -348,7 +314,6 @@ class Program
 {
     static void Main()
     {
-        // Создание экземпляров классов и вызов методов
         InterfaceImplementation interfaceInstance = new InterfaceImplementation();
         interfaceInstance.InterfaceMethod();
 

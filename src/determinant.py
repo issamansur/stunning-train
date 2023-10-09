@@ -147,7 +147,26 @@ X = vectorizer.fit_transform(samples)
 
 classifier = MultinomialNB()
 
-scores = cross_val_score(classifier, X, langs, cv=5)
+classifier.fit(X, langs)
 
-# Выводим результаты
-print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
+# scores = cross_val_score(classifier, X, langs, cv=5)
+# print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
+
+def determine(code: str) -> str:
+    predicted_lang = classifier.predict(vectorizer.transform([code]))[0]
+    return predicted_lang
+
+import time
+
+while True:
+    code = input("нажмите что-нибудь:")
+    with open('./resources/tests/test.txt', 'r', encoding='utf-8') as file:
+        code = file.read()
+    
+    start_time = time.time()
+    predicted_lang = determine(code)
+    end_time = time.time()
+    execution_time_ms = (end_time - start_time) * 1000
+    
+    print(f"Язык: {predicted_lang}")
+    print(f"Время исполнения: {execution_time_ms} мс")

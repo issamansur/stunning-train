@@ -1,21 +1,17 @@
-% Объявление переменных
 x = 10;
 y = 'Hello, world!';
 z = [1, 2, 3];
 w = struct('field1', 'value1', 'field2', 42);
 
-% Массивы
 array1 = [1, 2, 3, 4, 5];
 array2 = zeros(3, 3);
 array3 = eye(4);
 array4 = rand(2, 2);
 
-% Функция
 function result = addNumbers(a, b)
     result = a + b;
 end
 
-% Классы и интерфейсы
 classdef MyClass
     properties
         Property1
@@ -39,14 +35,12 @@ classdef MyInterface
     end
 end
 
-% Условие
 if x > 5
     disp('x больше 5');
 else
     disp('x не больше 5');
 end
 
-% Циклы
 for i = 1:5
     disp(['Итерация ', num2str(i)]);
 end
@@ -56,33 +50,27 @@ while x > 0
     x = x - 1;
 end
 
-% Структуры
 student.name = 'John Doe';
 student.age = 25;
 student.marks = [90, 85, 88];
 
-% Обработка исключений
 try
     result = 1 / 0;
 catch
     disp('Ошибка деления на ноль');
 end
 
-% Объявление переменных
 flag = true;
 str = 'MATLAB is awesome!';
 vec = [1.0, 2.0, 3.0];
 matrix = eye(3);
 
-% Функции
 function result = subtractNumbers(a, b)
     result = a - b;
 end
 
-% Анонимные функции (лямбда-выражения)
 multiply = @(a, b) a * b;
 
-% Классы и методы
 classdef Car
     properties
         make
@@ -103,7 +91,6 @@ classdef Car
     end
 end
 
-% Интерфейсы и реализация
 classdef (Abstract) Shape
     methods (Abstract)
         area(obj);
@@ -126,17 +113,14 @@ classdef Circle < Shape
     end
 end
 
-% Структуры
 student.name = 'Alice';
 student.age = 20;
 student.grades = [95, 88, 92];
 
-% Асинхронность (параллельные вычисления)
 parfor i = 1:4
     fprintf('Iteration %d\n', i);
 end
 
-% Обработка исключений
 try
     result = 1 / 0;
 catch ME

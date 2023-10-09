@@ -54,5 +54,4 @@
             <position>Developer</position>
         </employee>
     </company>
-    <!-- Это комментарий -->
 </root>
