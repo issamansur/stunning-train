@@ -1,0 +1,99 @@
+data example;
+  input Name $ Age Height Weight;
+  datalines;
+John 25 180 75
+Alice 30 160 55
+Bob 28 175 80
+;
+run;
+
+proc sgplot data=example;
+  histogram Age;
+  title 'Гистограмма возраста';
+run;
+
+data example;
+  set example;
+  if Age < 30 then Status = 'Молодой';
+  else Status = 'Зрелый';
+run;
+
+proc sql;
+  create table summary as
+  select Status, count(*) as Count
+  from example
+  group by Status;
+quit;
+
+proc sgplot data=example;
+  scatter x=Height y=Weight;
+  title 'График разброса роста и веса';
+run;
+
+data example;
+  input Name $ Age Height Weight;
+  datalines;
+John 25 180 75
+Alice 30 160 55
+Bob 28 175 80
+;
+run;
+
+proc sgplot data=example;
+  histogram Age;
+  title 'Гистограмма возраста';
+run;
+
+data example;
+  set example;
+  if Age < 30 then Status = 'Молодой';
+  else Status = 'Зрелый';
+run;
+
+proc sql;
+  create table summary as
+  select Status, count(*) as Count
+  from example
+  group by Status;
+quit;
+
+proc sgplot data=example;
+  scatter x=Height y=Weight;
+  title 'График разброса роста и веса';
+run;
+
+%macro print_message;
+  %put Сообщение из макроса;
+%mend print_message;
+
+%print_message;
+
+data example;
+  set example;
+  array Measurements[3] Height Weight Age;
+  do i = 1 to 3;
+    Measurements[i] = Measurements[i] * 2;
+  end;
+run;
+
+data loop_example;
+  do i = 1 to 5;
+    output;
+  end;
+run;
+
+proc format;
+  value AgeRange
+    low -< 20 = 'До 20 лет'
+    20 -< 30 = '20-30 лет'
+    30 - high = 'Свыше 30 лет';
+run;
+
+data example;
+  set example;
+  AgeCategory = put(Age, AgeRange.);
+run;
+
+proc print data=example;
+  title 'Исходные данные и результаты';
+run;

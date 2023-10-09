@@ -1,0 +1,83 @@
+#!/bin/bash
+
+name="John"
+age=30
+echo "Привет, $name! Тебе $age лет."
+
+if [ $age -lt 18 ]; then
+  echo "Ты несовершеннолетний."
+elif [ $age -ge 18 ] && [ $age -lt 60 ]; then
+  echo "Ты взрослый."
+else
+  echo "Ты пожилой."
+fi
+
+for i in {1..5}; do
+  echo "Это итерация номер $i"
+done
+
+function greet {
+  echo "Привет, $1!"
+}
+
+greet "Alice"
+greet "Bob"
+
+string1="Hello"
+string2="World"
+result="$string1 $string2"
+echo $result
+
+touch myfile.txt
+echo "Это текстовый файл." > myfile.txt
+cat myfile.txt
+
+echo "Домашняя директория: $HOME"
+echo "Текущая директория: $PWD"
+
+ls -l | grep ".txt"
+ps aux | grep "bash"
+
+read -p "Введите ваше имя: " username
+echo "Привет, $username!"
+
+file="example.txt"
+if [ -e $file ]; then
+  echo "$file существует."
+else
+  echo "$file не существует."
+fi
+
+exit 1
+
+
+fruits=("яблоко" "груша" "апельсин")
+echo "Первый фрукт: ${fruits[0]}"
+echo "Все фрукты: ${fruits[@]}"
+
+for fruit in "${fruits[@]}"; do
+  echo "Фрукт: $fruit"
+done
+
+current_date=$(date)
+echo "Текущая дата и время: $current_date"
+
+echo "Запуск длительного процесса..."
+sleep 5 &
+echo "Процесс запущен с PID $!"
+
+wait
+echo "Длительный процесс завершился."
+
+result=$(curl -s "https://www.example.com")
+echo "Содержимое www.example.com: $result"
+
+pattern="^[0-9]+$"
+if [[ "123" =~ $pattern ]]; then
+  echo "Строка содержит только цифры."
+else
+  echo "Строка не содержит только цифры."
+fi
+
+echo "Первый аргумент: $1"
+echo "Все аргументы: $@"

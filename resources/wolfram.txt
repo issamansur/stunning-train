@@ -1,0 +1,89 @@
+x = 5;
+y = 3;
+result = x + y;
+Print[result]
+
+f[x_] := x^2
+result = f[4]
+Print[result]
+
+Plot[Sin[x], {x, 0, 2Pi}]
+
+matrix = {{1, 2}, {3, 4}};
+result = matrix . {{5, 6}, {7, 8}}
+Print[result]
+
+solution = Solve[x^2 - 4 == 0, x]
+Print[solution]
+
+data = {{0, 0}, {1, 1}, {2, 4}, {3, 9}};
+interpolated = Interpolation[data];
+Plot[interpolated[x], {x, 0, 3}]
+
+fib[0] = 0;
+fib[1] = 1;
+fib[n_] := fib[n - 1] + fib[n - 2]
+result = fib[10]
+Print[result]
+
+expr = (x + y)^3
+expanded = Expand[expr]
+Print[expanded]
+
+integral = Integrate[x^2, x]
+Print[integral]
+
+list = {1, 2, 3, 4, 5};
+mean = Mean[list]
+Print[mean]
+
+SetDirectory["/путь/к/папке"]
+files = FileNames["*.txt"]
+Print[files]
+
+img = Import["image.jpg"];
+rotatedImg = ImageRotate[img, Pi/4]
+Print[rotatedImg]
+
+expr = a^2 + 2 a b + b^2;
+simplified = Simplify[expr]
+Print[simplified]
+
+Manipulate[
+  Plot[Sin[a x + b], {x, 0, 2 Pi}],
+  {{a, 1, "Частота"}, 0, 2},
+  {{b, 0, "Фаза"}, 0, Pi}
+]
+
+json = Import["data.json", "JSON"]
+Print[json]
+
+Needs["MachineLearning`"]
+data = ExampleData[{"MachineLearning", "FisherIris"}, "Data"];
+model = Classify[data, Method -> "RandomForest"];
+species = {"setosa", "versicolor", "virginica"};
+predict = Classify`Predict[model, RandomSample[data -> species]];
+Print[predict[RandomSample[data[[All, 1 ;; 4]]]]]
+
+SeedRandom[123];
+randomData = RandomReal[{-1, 1}, {100, 2}];
+ListPlot[randomData, PlotStyle -> PointSize[0.02]]
+
+today = DateObject[{2023, 10, 6}];
+nextWeek = today + Quantity[7, "Days"];
+Print[nextWeek]
+
+Limit[Sin[x]/x, x -> 0]
+N[Pi, 20]
+
+v1 = {1, 2, 3};
+v2 = {4, 5, 6};
+dotProduct = v1 . v2;
+crossProduct = Cross[v1, v2];
+Print[dotProduct]
+Print[crossProduct]
+
+URLFetch["https://www.wolfram.com/"]
+
+audio = ExampleData[{"Audio", "Apollo11Landing"}];
+Spectrogram[audio]
