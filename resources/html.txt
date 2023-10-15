@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Пример HTML-кода</title>
+</head>
+<body>
+    <h1>Заголовок 1</h1>
+    <h2>Заголовок 2</h2>
+    <h3>Заголовок 3</h3>
+    <h4>Заголовок 4</h4>
+    <h5>Заголовок 5</h5>
+    <h6>Заголовок 6</h6>
+
+    <p>Это обычный параграф текста.</p>
+
+    <a href="https://www.example.com">Ссылка на Example.com</a>
+
+    <ul>
+        <li>Элемент неупорядоченного списка 1</li>
+        <li>Элемент неупорядоченного списка 2</li>
+    </ul>
+
+    <ol>
+        <li>Элемент упорядоченного списка 1</li>
+        <li>Элемент упорядоченного списка 2</li>
+    </ol>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Заголовок 1</th>
+                <th>Заголовок 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ячейка 1,1</td>
+                <td>Ячейка 1,2</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form action="/submit" method="post">
+        <label for="">Имя:</label>
+        <input type="" id="" name="" required>
+        <br>
+
+        <label for="">Email:</label>
+        <input type="" id="" name="" required>
+        <br>
+
+        <label for=""></label>
+        <textarea id="" name="" rows="" cols=""></textarea>
+        <br>
+
+        <input type="submit" value="">
+    </form>
+
+    <img src="" alt="">
+
+    <hr>
+</body>
+</html>

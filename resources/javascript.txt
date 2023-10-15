@@ -1,0 +1,111 @@
+let name = "John";
+const age = 30;
+var count = 0;
+
+if (age >= 18) {
+    console.log("Совершеннолетний");
+} else {
+    console.log("Несовершеннолетний");
+}
+
+for (let i = 0; i < 5; i++) {
+    console.log("Итерация " + i);
+}
+
+function greet(name) {
+    console.log("Привет, " + name + "!");
+}
+greet("Анна");
+
+let fruits = ["яблоко", "груша", "банан"];
+console.log(fruits[0]); // "яблоко"
+
+let person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30
+};
+
+document.getElementById("myButton").addEventListener("click", function() {
+    alert("Кнопка была нажата!");
+});
+
+function fetchData() {
+    return fetch("https://api.example.com/data")
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+}
+
+const add = (a, b) => a + b;
+
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+    sayHello() {
+        console.log("Привет, меня зовут " + this.name);
+    }
+}
+
+document.getElementById("myElement").innerHTML = "Новый текст";
+
+const numbers = [1, 2, 3, 4, 5];
+
+const doubled = numbers.map(number => number * 2);
+const squared = numbers.map(number => number ** 2);
+
+const isEven = number => (number % 2 === 0 ? "четное" : "нечетное");
+
+const person = {
+    firstName: "Alice",
+    lastName: "Smith",
+    age: 25,
+    address: {
+        street: "123 Main St",
+        city: "New York"
+    }
+};
+
+const { firstName, lastName } = person;
+
+const greeting = `Привет, ${firstName} ${lastName}!`;
+
+const fetchData = () => new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Данные получены"), 2000);
+});
+
+fetchData()
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    makeSound() {
+        console.log(`${this.name} издает звук`);
+    }
+}
+
+class Dog extends Animal {
+    makeSound() {
+        console.log(`${this.name} лает`);
+    }
+}
+
+const uniqueNumbers = new Set([1, 2, 3, 4, 5]);
+const userMap = new Map([["Alice", 25], ["Bob", 30]]);
+
+async function fetchDataAsync() {
+    try {
+        const data = await fetchData();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+document.getElementById("myButton").addEventListener("click", () => {
+    console.log("Кнопка была нажата!");
+});
